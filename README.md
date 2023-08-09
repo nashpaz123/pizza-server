@@ -2,11 +2,13 @@
 
 Pizza-server app. Flask with Dockerfile, CI with Jenkinsfile, deploy with helm
 The server will take orders in the form of json loads:
+```jsonc
 {
 "pizza-type": "<margherita|pugliese|marinara>"
 "size": "<personal|family>"
 "amount": <int>
 }
+```
 
 You can clone and test the app with:
 ```
@@ -27,10 +29,10 @@ A sanity check is be available at https://<host url or LB that should redirect t
 
 
 Check by posting e.g:
-```
+```jsonc
 curl -X POST -H "Content-Type: application/json" -d '{
-  "pizza-type": "margherita",
-  "size": "personal",
+  "pizza-type": "margherita", //or other
+  "size": "personal", //or family
   "amount": 2
 }' https://<host url or LB that should redirect to port 8080>/order
 
