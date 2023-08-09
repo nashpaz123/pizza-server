@@ -1,0 +1,5 @@
+apiVersion: v2
+name: pizza-app
+description: A Helm chart for deploying a pizza application
+version: 0.1.0
+appVersion: "1.0"

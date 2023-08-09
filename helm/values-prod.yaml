@@ -1,0 +1,29 @@
+replicaCount: 3
+image:
+  repository: nashpaz123/pizza-app
+  tag: latest #in prod this would be set to a valid tag that went through pipeline tests
+resources:
+  requests:
+    cpu: 100m
+    memory: 250Mi
+  limits:
+    cpu: 1500m
+    memory: 3Gi
+
+#TODO: secrets, ssl, ingress, networkPolicy
+ingress:
+  enabled: false
+  annotations: {}
+
+  labels: {}
+
+  hosts: []
+      # - pizza.domain.com
+
+  tls: []
+    # - secretName: pizza-general-tls
+    #   hosts:
+    #   - pizza.example.com
+
+secret:
+  annotations: {}

@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "pizza-app.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "pizza-app.name" . }}
+    helm.sh/chart: {{ include "pizza-app.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  rules:
+    - host: your.domain.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "pizza-app.fullname" . }}
+                port:
+                  number: 80
