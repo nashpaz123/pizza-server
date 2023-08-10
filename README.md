@@ -36,8 +36,8 @@ Test the server by **posting an order**, e.g:
 
 ```jsonc
 curl -X POST -H "Content-Type: application/json" -d '{
-  "pizza-type": "margherita", //or other
-  "size": "personal", //or family
+  "pizza-type": "margherita",
+  "size": "personal",
   "amount": 2
 }' https://<host url or LB that should redirect to port 8080>/order
 
