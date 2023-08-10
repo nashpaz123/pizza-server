@@ -12,8 +12,8 @@ This server will take orders in the form of json loads:
 
 You can **clone and test the app locally** with:
 ```
-docker build -t my-flask-app .
-docker run -p 8080:8080 my-flask-app
+docker build -t pizza-app .
+docker run -p 8080:8080 pizza-app
 ```
 #
 
