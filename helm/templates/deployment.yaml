@@ -25,6 +25,17 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            # Define extra environment variables
+            # Define environment variables as needed
           resources:
-            # Define resource limits and requests
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
