@@ -3,12 +3,12 @@ image:
   repository: nashpaz123/pizza-app
   tag: latest #in prod this would be set to a valid tag that went through pipeline tests
 resources:
-  requests:
-    cpu: 100m
-    memory: 250Mi
   limits:
-    cpu: 1500m
-    memory: 3Gi
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
 
 #TODO: secrets, ssl, ingress, networkPolicy
 ingress:
