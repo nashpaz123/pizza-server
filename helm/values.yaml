@@ -2,3 +2,10 @@ replicaCount: 3
 image:
   repository: nashpaz123/pizza-app
   tag: latest
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
